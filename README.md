@@ -7,31 +7,7 @@
 
 An unofficial API service for Nepal Stock Exchange (NEPSE) that provides real-time market data through REST, WebSocket, and Model Context Protocol (MCP) endpoints.
 
-## ⚠️ VERY IMPORTANT: Legal & Liability Disclaimer
-
-**This project is provided "AS IS" without any warranty of any kind, express or implied. By using this software or its hosted services, you are agreeing to accept all risks and responsibilities.**
-
-### 1. Strictly for Educational & Non-Commercial Use
-This project and its associated services are intended **strictly for educational, research, and personal, non-commercial purposes only**.
-- **Commercial use is strictly prohibited.** You may not use this software, its data, or its services to build commercial applications, for financial gain, or in any production trading system.
-- For any commercial use of NEPSE data, you must obtain a license from the Nepal Stock Exchange or an authorized data provider.
-
-### 2. No Guarantee of Accuracy or Reliability
-The data is sourced from unofficial channels. The author **does not guarantee the accuracy, completeness, timeliness, or reliability** of any data provided. Do not use this for making financial decisions. Any financial loss or other damages resulting from the use of this software are solely your responsibility.
-
-### 3. No Liability for Downtime or Bugs
-The author is **not liable for anything**. This includes, but is not limited to:
-- **Bugs or Errors**: The software may contain bugs. There is no obligation to provide patches or fixes.
-- **Server Downtime**: The hosted services may be unavailable at any time without notice.
-- **Data Loss or Damages**: The author is not responsible for any form of loss or damage resulting from the use of this project.
-
-### 4. Hosted Service Is Unreliable and Provided "As-Is"
-A free, hosted version of this API is provided as a convenience for testing and educational use.
-- It runs on a **free-tier Oracle Cloud server in India**, which is known to **terminate instances randomly and without warning**.
-- **There is absolutely NO guarantee of uptime or availability.** Do not rely on it for anything important. The author is not obligated to maintain this service or provide any support for it.
-
-### 5. You Use It at Your Own Risk
-This is a personal project that earns no money. By choosing to use this software, you acknowledge that you understand these risks and agree to hold the author harmless from any and all claims, damages, or losses.
+TEST IF IT WORKS
 
 ## Features
 
