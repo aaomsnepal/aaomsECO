@@ -1,5 +1,5 @@
 fastapi==0.115.14
-nepse @ git+https://github.com/basic-bgnr/NepseUnofficialApi.git@dev #dev branch
+nepse @ git+https://github.com/basic-bgnr/NepseUnofficialApi.git@e92378905e11248b29cc702fdfee4846176b659a #pinned 2026-06-12, was @dev
 #nepse @ git+https://github.com/surajrimal07/NepseUnofficialApi.git  #@master
 uvicorn==0.34.0
 websockets==14.1

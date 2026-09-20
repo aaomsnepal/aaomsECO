@@ -1,13 +1,51 @@
+# aaomsECO — NEPSE Data System
+
+> **What this repo is, in one minute:** a self-contained Nepal Stock Exchange
+> data backend (REST + WebSocket + MCP) with a **twice-daily auto-updated**
+> stock-symbol map. Run it anywhere, point any frontend at it, data stays fresh
+> on its own. Educational use only.
+
+## System map (everything, clearly)
+
+| # | Part | File | What it does |
+|---|---|---|---|
+| 1 | REST API | `server.py` (`:8000`) | Market summary, live market, price/volume, floorsheet, sectors, validation |
+| 2 | WebSocket | `socketServer.py` (`:5555`) | Real-time streaming (`Summary`, `LiveMarket`, `CompanyDetails`, …) |
+| 3 | MCP server | `mcp_server.py` (`:8080`) | 20+ AI tools (Claude Desktop compatible) |
+| 4 | Daily updater | `updateStocksMap.py` | Fetches `SecurityList` + `SectorScrips` → writes `stockmap.json` (540 symbols, 14 sectors) |
+| 5 | Symbol map | `stockmap.json` | Auto-committed **twice daily (00:00 + 12:00 UTC)** |
+| 6 | Run log | `stock_update.log` | Auto-committed with every map update |
+| 7 | Scheduler | `.github/workflows/update-stock-map.yml` | CI job: install → start server → update → commit → push; opens an issue with logs on failure |
+| 8 | Deploy | `Dockerfile`, `docker-compose.yml`, `render.yaml` | Container or one-click Render (`/health` check) |
+| 9 | Add-on manual | `addon-README.md` | One-page operator guide |
+
+## Quick start (Windows)
+
+```bat
+python -m venv venv
+venv\Scripts\activate
+pip install -r requirements.txt
+python start_servers.py
+```
+
+Check: `http://localhost:8000/health` → 200. Update map manually: `python updateStocksMap.py`.
+
+## Status (verified)
+
+- ✅ Daily job green — run #12 `Success in 37s`, auto-commit `b69178e`
+- ✅ Full auto chain: schedule → update → commit → push, failure issues with logs
+- ✅ Upstream pinned: data comes via `nepse@e923789` (pinned 2026-06-12) from `nepalstock.com`; third-party hosted reference `nepseapi.surajrimal.dev` currently returns 522 (not this repo)
+
+---
+
 # NEPSE API
 
-![Build and Push Docker Image](https://github.com/surajrimal07/NepseAPI/actions/workflows/docker-build.yml/badge.svg)
+![Build and Push Docker Image](https://github.com/aaomsnepal/aaomsECO/actions/workflows/docker-build.yml/badge.svg)
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 ![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)
 ![Educational Use](https://img.shields.io/badge/Use-Educational%20%26%20Research-green.svg)
 
 An unofficial API service for Nepal Stock Exchange (NEPSE) that provides real-time market data through REST, WebSocket, and Model Context Protocol (MCP) endpoints.
-
-TEST IF IT WORKS
 
 ## Features
 
@@ -60,6 +98,10 @@ For any legal concerns, issues, or questions:
 ### 🌐 Hosted Service (Free Access)
 
 A free hosted version is available with rate limiting as a **generous effort** to support researchers and students:
+
+> **Note (aaomsECO, Sep 2026):** the third-party hosted endpoints below currently
+> return `522` (origin down). They are not run from this repo — deploy your own
+> copy with `Dockerfile` / `docker-compose.yml` / `render.yaml` instead.
 
 | Service      | URL                                     | Status                                                                                                                                                           |
 |--------------|-----------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|

@@ -42,7 +42,7 @@ Proven: run #12 `Success in 37s`, auto-commit `b69178e`.
 - Internal: `:8000/health`, `/SecurityList`, `/SectorScrips`
 - Upstream reference (third-party, currently 522): `https://nepseapi.surajrimal.dev`
 
-## Recommendation
+## Pinned upstream
 
-Pin the `nepse@dev` dependency to a commit SHA to remove the one
-floating external link. Say the word and it gets pinned + pushed.
+`nepse` is pinned to `e923789` (2026-06-12) in `requirements.txt` — no
+floating external branch. Re-pin with a newer SHA when you want upstream fixes.
