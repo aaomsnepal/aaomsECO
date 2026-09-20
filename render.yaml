@@ -1,0 +1,13 @@
+# One-click Render deploy for the NEPSE add-on API.
+# Repo already installs from requirements.txt; this just declares the service.
+services:
+  - type: web
+    name: aaomseco-nepse-api
+    runtime: python
+    plan: free
+    buildCommand: "pip install --upgrade pip && pip install -r requirements.txt"
+    startCommand: "python server.py"
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
