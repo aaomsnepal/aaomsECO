@@ -1,9 +1,10 @@
 name: Update Stock Map
 
 on:
-  # Run daily at midnight UTC
+  # Run twice daily: midnight + noon UTC
   schedule:
     - cron: '0 0 * * *'
+    - cron: '0 12 * * *'
 
   # Allow manual triggering
   workflow_dispatch:
