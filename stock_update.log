@@ -1908,3 +1908,21 @@
 2026-11-09 04:24:02,530 - INFO - Stock map saved successfully to stockmap.json
 2026-11-09 04:24:02,530 - INFO - Stock map update completed successfully!
 2026-11-09 04:24:02,530 - INFO - Update completed successfully!
+2026-11-09 21:44:14,488 - INFO - === NEPSE Stock Map Updater ===
+2026-11-09 21:44:14,488 - INFO - API URL: http://localhost:8000
+2026-11-09 21:44:14,488 - INFO - Target file: stockmap.json
+2026-11-09 21:44:14,528 - INFO - Checking API server health...
+2026-11-09 21:44:14,552 - INFO - HTTP Request: GET http://localhost:8000/health "HTTP/1.1 200 OK"
+2026-11-09 21:44:14,553 - INFO - Fetching security list...
+2026-11-09 21:44:17,781 - INFO - HTTP Request: GET http://localhost:8000/SecurityList "HTTP/1.1 200 OK"
+2026-11-09 21:44:17,783 - INFO - Security data fetched: 570 items
+2026-11-09 21:44:17,783 - INFO - Fetching sector data...
+2026-11-09 21:44:21,208 - INFO - HTTP Request: GET http://localhost:8000/SectorScrips "HTTP/1.1 200 OK"
+2026-11-09 21:44:21,208 - INFO - Sector data fetched: 14 sectors
+2026-11-09 21:44:21,209 - INFO - Processing data...
+2026-11-09 21:44:21,209 - INFO - Created symbol-sector map with 570 entries
+2026-11-09 21:44:21,209 - INFO - Created stock map with 543 entries
+2026-11-09 21:44:21,209 - INFO - Saving stock map...
+2026-11-09 21:44:21,211 - INFO - Stock map saved successfully to stockmap.json
+2026-11-09 21:44:21,212 - INFO - Stock map update completed successfully!
+2026-11-09 21:44:21,212 - INFO - Update completed successfully!
